@@ -66,3 +66,31 @@ TLS organized with two sub layers (Record & Handshake)
 - Authentication
 - Encryption
 
+## TLS Protocol Session 
+
+Association between client and server 
+- Two parties have common information when session established (Session Parameters) 
+- Necessary to make establishment of a session but not sufficient (Need Connection) 
+
+### Session Parameters 
+- SessionID 
+- Peer Certificate
+- Compression Method
+- Cipher Suite 
+- Master Secret 
+- Session Ticket 
+
+## TLS Protocol Connection
+
+One session can consisted of many connection 
+- No need to establish session again 
+- Session can be suspended and resume again 
+- To resume an old session and create a new connection (Skip negotiation and make shorter (No master secret creation required)) 
+
+Session Roles are different, Connection Roles are same 
+- In a session one must be client and server
+- In a connection both parties are peers 
+
+To start communication they need to exchange **Two Random Numbers**, **Create/Use Master Secret**, **Read/Write keys and Parameters** (Connection state parameters) 
+
+
